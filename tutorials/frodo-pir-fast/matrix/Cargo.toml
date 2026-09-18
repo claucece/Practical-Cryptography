@@ -1,0 +1,18 @@
+[package]
+name = "matrix"
+version = "0.0.1-alpha.1"
+description = "A package implementing Matrix operations"
+include = ["Cargo.toml", "src"]
+edition = "2021"
+
+[dependencies]
+ark-ec = { version = "0.4.2", default-features = false }
+ark-std = { version = "0.4.0", default-features = false }
+rand = { version = "0.8.5" }
+ark-ff = { version = "0.4.2"}
+ark-serialize = { version = "0.4.2"}
+num-bigint = { version = "0.4", default-features = false }
+rand_core = "0.6.3"
+base64 = "0.13"
+clap = { version = "4.3.1", features = ["derive"] }
+rayon = "1.5"

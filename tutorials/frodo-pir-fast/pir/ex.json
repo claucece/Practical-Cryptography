@@ -1,0 +1,58 @@
+{
+  "config": {
+    "version": "1.0",
+    "applicationName": "ExampleApp",
+    "lastUpdated": "2024-07-31T12:00:00Z",
+    "settings": {
+      "theme": "dark",
+      "language": "en-US",
+      "notifications": {
+        "email": true,
+        "sms": false,
+        "push": true
+      }
+    }
+  },
+  "user": {
+    "userId": 12345,
+    "userName": "JohnDoe",
+    "email": "johndoe@example.com",
+    "profile": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "birthdate": "1990-01-01",
+      "address": {
+        "street": "123 Main St",
+        "city": "Hometown",
+        "state": "HT",
+        "zipCode": "12345",
+        "country": "USA"
+      }
+    },
+    "preferences": {
+      "newsletter": true,
+      "smsAlerts": false,
+      "inAppMessages": true
+    }
+  },
+  "data": {
+    "items": [
+      {
+        "itemId": 1,
+        "itemName": "Sample Item 1",
+        "itemDescription": "Description of sample item 1",
+        "quantity": 10,
+        "price": 99.99,
+        "category": "Sample Category"
+      },
+      {
+        "itemId": 2,
+        "itemName": "Sample Item 2",
+        "itemDescription": "Description of sample item 2",
+        "quantity": 5,
+        "price": 49.99,
+        "category": "Sample Category"
+      }
+    ]
+  }
+}

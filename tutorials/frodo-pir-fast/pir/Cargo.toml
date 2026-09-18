@@ -1,0 +1,25 @@
+[package]
+name = "pir"
+version = "0.0.1-alpha.1"
+description = "A package implementing FrodoPIR"
+include = ["Cargo.toml", "src"]
+edition = "2021"
+
+[dependencies]
+rand = { version = "0.8.5" }
+num-bigint = { version = "0.4", default-features = false }
+rand_core = "0.6.3"
+base64 = "0.13"
+clap = { version = "4.3.1", features = ["derive"] }
+rayon = "1.5"
+matrix = { path = "../matrix" }
+
+[dev-dependencies]
+criterion = "0.5.1"
+
+[[bench]]
+name = "bench"
+harness = false
+
+[lib]
+bench = false
