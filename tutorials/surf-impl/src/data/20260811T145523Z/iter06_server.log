@@ -1,0 +1,293 @@
+[Server] connect to server on:127.0.0.1:57631 verifier on:127.0.0.1:57630
+[Server] Alternatively, you can run the client program by pasting the following command into another terminal: 
+./E2EBench --ip 127.0.0.1 -p 57631 -v 57630
+[Server] Running benchmark
+[Server] Accepting
+[Server] Doing handshake
+[Server] Finished handshake
+[Server] Preprocessing circuits
+[Server] Preproc HS1 circuit
+[Server] Preproc traffic circuit
+[Server] Preproc gcm share circuit
+[Server] Preproc res circuit
+[Server] Preproc psk circuit
+[Server] Preproc psk circuit (8-byte nonce)
+[Server] Preproc binder circuit
+[Server] Preproc gcm vfy circuit
+[Server] Preproc ks block circuit
+[Server] Preproc aes enc circuit
+[Server] Preproc gcm tag circuit
+[Server] Reading mask commitments
+[Server] Reading key share
+[Server] accepted
+[Server] Creating key share
+[Server] Writing key share
+[Server] Deriving PSK binder
+[Server] Reading server key share
+[Server] Finishing 3PH
+[Server] Writing HS_RECV
+[Server] Doing ectf
+[Server] Finished ectf
+[Server] Doing HS derivation
+[Server] Finished HS derivation
+[Server] Reading cert
+[Server] Read cert
+[Server] Deriving TS
+[Server] Deriving GCM shares
+[Server] Calling into derivation circuit
+[Server] Derived GCM shares
+[Server] Deriving resumption
+[Server] Derived resumption
+[Server] Deriving psk
+[Server] received request:
+GET /index.html HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+
+
+[Server] received request:
+GET /styles.css HTTP/1.1
+Host: 127.0.0.1
+Connection: close
+
+
+[Server] Derived psk
+[Server] Shutting down
+[Server] GCM tag verified
+[Server] GCM tag verified
+[Server] GCM tag verified
+[Server] GCM tag verified
+TIMINGS:
+ACCEPT:0.524495s
+HANDSHAKE:0.00618321s
+HANDSHAKE_DONE:3.7792e-05s
+READING_KS:4.3667e-05s
+MAKING_KS:2.1416e-05s
+WRITING_KS:5.083e-06s
+READING_SKS:0.002398s
+FINISHING_TPH:3.6667e-05s
+WRITING_HS_RECV:5.208e-06s
+ECTF_WAIT:0.0170684s
+ECTF_DONE:5.208e-06s
+KS_WAIT:0.08006s
+KS_DONE:2.0083e-05s
+CIRCUIT_PREPROC:13.5142s
+CERT_WAIT:0.0159118s
+CERT_WRITE:5.292e-06s
+DERIVE_TS_WAIT:0.0198673s
+DERIVE_TS:0.0197221s
+DERIVE_GCM_SHARES:0.101217s
+DERIVE_RES:0.0114336s
+SESSION_TICKET:0s
+DERIVE_PSK:0.00510433s
+DERIVE_PSK_WAIT:0.0223735s
+PSK_BINDER:0s
+MASK_COMMIT:1.6917e-05s
+GCM_VERIFY:0.0026405s
+KS_DERIVE:0.0632796s
+AES_ENCRYPT:0.0112932s
+GCM_TAG:0.000887125s
+
+DATA:
+ACCEPT:0 MiB
+HANDSHAKE:0 MiB
+HANDSHAKE_DONE:0 MiB
+READING_KS:6.67572e-05 MiB
+MAKING_KS:0 MiB
+WRITING_KS:6.67572e-05 MiB
+READING_SKS:6.67572e-05 MiB
+FINISHING_TPH:0 MiB
+WRITING_HS_RECV:9.53674e-07 MiB
+ECTF_WAIT:0.242844 MiB
+ECTF_DONE:9.53674e-07 MiB
+KS_WAIT:0.0725327 MiB
+KS_DONE:9.53674e-07 MiB
+CIRCUIT_PREPROC:779.63 MiB
+CERT_WAIT:3.91006e-05 MiB
+CERT_WRITE:3.14713e-05 MiB
+DERIVE_TS_WAIT:0 MiB
+DERIVE_TS:0.0276108 MiB
+DERIVE_GCM_SHARES:0.0488291 MiB
+DERIVE_RES:0.0205307 MiB
+SESSION_TICKET:0 MiB
+DERIVE_PSK:0.0124893 MiB
+DERIVE_PSK_WAIT:0 MiB
+PSK_BINDER:0 MiB
+MASK_COMMIT:0.00195789 MiB
+GCM_VERIFY:0.000529289 MiB
+KS_DERIVE:0.559694 MiB
+AES_ENCRYPT:0.294094 MiB
+GCM_TAG:0.0346012 MiB
+
+ACCEPT:0 rounds
+HANDSHAKE:0 rounds
+HANDSHAKE_DONE:0 rounds
+READING_KS:1 rounds
+MAKING_KS:0 rounds
+WRITING_KS:1 rounds
+READING_SKS:1 rounds
+FINISHING_TPH:0 rounds
+WRITING_HS_RECV:1 rounds
+ECTF_WAIT:7 rounds
+ECTF_DONE:1 rounds
+KS_WAIT:2 rounds
+KS_DONE:1 rounds
+CIRCUIT_PREPROC:310 rounds
+CERT_WAIT:1 rounds
+CERT_WRITE:1 rounds
+DERIVE_TS_WAIT:0 rounds
+DERIVE_TS:2 rounds
+DERIVE_GCM_SHARES:4 rounds
+DERIVE_RES:2 rounds
+SESSION_TICKET:0 rounds
+DERIVE_PSK:2 rounds
+DERIVE_PSK_WAIT:0 rounds
+PSK_BINDER:0 rounds
+MASK_COMMIT:1 rounds
+GCM_VERIFY:4 rounds
+KS_DERIVE:4 rounds
+AES_ENCRYPT:6 rounds
+GCM_TAG:6 rounds
+
+[Server] Waiting for resumed connection
+[Server] Accepting (resumption)
+[Server] Doing handshake (resumption)
+[Server] Finished handshake (resumption)
+[Server] Preprocessing circuits (resumption)
+[Server] Preproc HS1 circuit
+[Server] Preproc traffic circuit
+[Server] Preproc gcm share circuit
+[Server] Preproc res circuit
+[Server] Preproc psk circuit
+[Server] Preproc psk circuit (8-byte nonce)
+[Server] Preproc binder circuit
+[Server] Preproc gcm vfy circuit
+[Server] Preproc ks block circuit
+[Server] Preproc aes enc circuit
+[Server] Preproc gcm tag circuit
+[Server] Reading mask commitments (resumption)
+[Server] Reading key share
+[Server] accepted
+[Server] Creating key share
+[Server] Writing key share
+[Server] Deriving PSK binder
+[Server] Reading server key share
+[Server] Finishing 3PH
+[Server] Writing HS_RECV
+[Server] Doing ectf
+[Server] Finished ectf
+[Server] Doing HS derivation
+[Server] Finished HS derivation
+[Server] Reading cert (resumption)
+[Server] Writing shares (resumption)
+[Server] Deriving TS
+[Server] Deriving GCM shares
+[Server] Calling into derivation circuit
+[Server] Derived GCM shares
+[Server] Deriving resumption
+[Server] Derived resumption
+[Server] Deriving psk
+[Server] waiting for request on resumed connection
+[Server] received request:
+POST /verify HTTP/1.1
+Host: 127.0.0.1
+Content-Length: 0
+Connection: close
+
+
+[Server] Derived psk
+[Server] Shutting down
+[Server] GCM tag verified
+[Server] GCM tag verified
+TIMINGS (resumption):
+ACCEPT:1.4333e-05s
+HANDSHAKE:0.00145792s
+HANDSHAKE_DONE:6.125e-06s
+READING_KS:0.00153383s
+MAKING_KS:0.000122625s
+WRITING_KS:5.375e-06s
+READING_SKS:0.00244067s
+FINISHING_TPH:3.4084e-05s
+WRITING_HS_RECV:6.333e-06s
+ECTF_WAIT:0.0166618s
+ECTF_DONE:5.167e-06s
+KS_WAIT:0.113477s
+KS_DONE:1.9584e-05s
+CIRCUIT_PREPROC:16.1899s
+CERT_WAIT:0s
+CERT_WRITE:2.875e-06s
+DERIVE_TS_WAIT:0.0900186s
+DERIVE_TS:0.048837s
+DERIVE_GCM_SHARES:0.116761s
+DERIVE_RES:0.0249773s
+SESSION_TICKET:0s
+DERIVE_PSK:0.00902225s
+DERIVE_PSK_WAIT:0.0273087s
+PSK_BINDER:0.0900174s
+MASK_COMMIT:6.2625e-05s
+GCM_VERIFY:0.00170379s
+KS_DERIVE:0.0846093s
+AES_ENCRYPT:0.00786025s
+GCM_TAG:0.000456375s
+
+DATA (resumption):
+ACCEPT:0 MiB
+HANDSHAKE:0 MiB
+HANDSHAKE_DONE:0 MiB
+READING_KS:6.67572e-05 MiB
+MAKING_KS:0 MiB
+WRITING_KS:6.67572e-05 MiB
+READING_SKS:6.67572e-05 MiB
+FINISHING_TPH:0 MiB
+WRITING_HS_RECV:9.53674e-07 MiB
+ECTF_WAIT:0.242844 MiB
+ECTF_DONE:9.53674e-07 MiB
+KS_WAIT:0.0725327 MiB
+KS_DONE:9.53674e-07 MiB
+CIRCUIT_PREPROC:779.63 MiB
+CERT_WAIT:0 MiB
+CERT_WRITE:3.14713e-05 MiB
+DERIVE_TS_WAIT:0 MiB
+DERIVE_TS:0.0276108 MiB
+DERIVE_GCM_SHARES:0.0488291 MiB
+DERIVE_RES:0.0205307 MiB
+SESSION_TICKET:0 MiB
+DERIVE_PSK:0.0124893 MiB
+DERIVE_PSK_WAIT:0 MiB
+PSK_BINDER:0.0163813 MiB
+MASK_COMMIT:0.00195789 MiB
+GCM_VERIFY:0.000490189 MiB
+KS_DERIVE:0.559694 MiB
+AES_ENCRYPT:0.147047 MiB
+GCM_TAG:0.0173006 MiB
+
+ACCEPT:0 rounds
+HANDSHAKE:0 rounds
+HANDSHAKE_DONE:0 rounds
+READING_KS:1 rounds
+MAKING_KS:0 rounds
+WRITING_KS:1 rounds
+READING_SKS:1 rounds
+FINISHING_TPH:0 rounds
+WRITING_HS_RECV:1 rounds
+ECTF_WAIT:7 rounds
+ECTF_DONE:1 rounds
+KS_WAIT:2 rounds
+KS_DONE:1 rounds
+CIRCUIT_PREPROC:310 rounds
+CERT_WAIT:0 rounds
+CERT_WRITE:1 rounds
+DERIVE_TS_WAIT:0 rounds
+DERIVE_TS:2 rounds
+DERIVE_GCM_SHARES:4 rounds
+DERIVE_RES:2 rounds
+SESSION_TICKET:0 rounds
+DERIVE_PSK:2 rounds
+DERIVE_PSK_WAIT:0 rounds
+PSK_BINDER:3 rounds
+MASK_COMMIT:1 rounds
+GCM_VERIFY:2 rounds
+KS_DERIVE:4 rounds
+AES_ENCRYPT:3 rounds
+GCM_TAG:3 rounds
+

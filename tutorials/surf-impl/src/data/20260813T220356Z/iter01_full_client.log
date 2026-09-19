@@ -1,0 +1,21 @@
+[measurement!] SH at +4.633 ms
+[measurement!] SH at +0.591 ms
+[cert-send] 0.020 ms
+[prover] derive_ts circuit 42.403 ms
+[Prover] session_reused=0
+[Prover] write1=69
+[Prover] write2=64
+[surf_capture] seq=0 body_len=199 ct_len=183
+[measurement!] NST at +48.803 ms from HS done (+431.368 ms from CH), len=182
+[surf_capture] seq=1 body_len=18 ct_len=2
+[surf_capture] seq=2 body_len=144 ct_len=128
+
+=== index.html ===
+[0;30m[0;37m                                      SURF                                      
+[surf_capture] seq=3 body_len=114 ct_len=98
+
+=== styles.css ===
+[0;30m[0;37mh1{color:green}                                                                 
+[Prover] full surf_records=4 nblocks=28
+[Prover] wrote handoff to /Users/sofiaceli/code/surf-impl-new/src/data/20260813T220356Z/iter01_handoff
+[Prover] round=full ok=1

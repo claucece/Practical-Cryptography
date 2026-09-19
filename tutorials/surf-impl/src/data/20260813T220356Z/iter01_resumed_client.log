@@ -1,0 +1,16 @@
+[Prover] loaded session and PSK share from /Users/sofiaceli/code/surf-impl-new/src/data/20260813T220356Z/iter01_handoff
+[measurement!] SH at +3.612 ms
+[measurement!] SH at +0.264 ms
+[prover] derive_ts circuit 37.035 ms
+[Prover] resumed connect ok session_reused=1
+[Prover] sent request on resumed connection
+[surf_capture] seq=0 body_len=199 ct_len=183
+[measurement!] NST at +48.510 ms from HS done (+328.582 ms from CH), len=182
+[surf_capture] seq=1 body_len=275 ct_len=259
+
+=== index.html (resumed) ===
+[0;30m[0;32;47m                          I AM A: Resumed connection!                           
+[0;32;47m                                                                                
+[0;32;47m[0;34;47mSession successfully resumed via SURF PSK                                       
+[Prover] resumed surf_records=2 nblocks=29
+[Prover] round=resumed ok=1

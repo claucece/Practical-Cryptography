@@ -1,0 +1,38 @@
+[measurement!] SH at +3.224 ms
+[measurement!] SH at +0.571 ms
+[cert-send] 0.019 ms
+[Prover] session_reused=0
+[Prover] write1=69
+[Prover] write2=64
+[surf_capture] seq=0 body_len=199 ct_len=183
+[measurement!] NST at +11.529 ms from HS done (+294.162 ms from CH), len=182
+[surf_capture] seq=1 body_len=18 ct_len=2
+[surf_capture] seq=2 body_len=144 ct_len=128
+
+=== index.html ===
+[0;30m[0;37m                                      SURF                                      
+[surf_capture] seq=3 body_len=114 ct_len=98
+
+=== styles.css ===
+[0;30m[0;37mh1{color:green}                                                                 
+[Prover] verified 4 record tags, ok=1
+[Prover] derived keystream sucessfully!
+[Prover] surf_records=4 nblocks=28
+[measurement!] SH at +1.317 ms
+[Prover] I have a saved session
+[Prover] set session and callbacks on resumed connection
+[measurement!] SH at +0.262 ms
+[Prover] resumed connect_to ok=1 session_reused=1
+[Prover] sending GET request on resumed connection
+[Prover] sent GET request
+[surf_capture] seq=0 body_len=199 ct_len=183
+[measurement!] NST at +9.414 ms from HS done (+413.098 ms from CH), len=182
+[surf_capture] seq=1 body_len=275 ct_len=259
+
+=== index.html (resumed) ===
+[0;30m[0;32;47m                          I AM A: Resumed connection!                           
+[0;32;47m                                                                                
+[0;32;47m[0;34;47mSession successfully resumed via SURF PSK                                       
+[Prover] verified 2 resumed record tags, ok=1
+[Prover] derived resumed keystream successfully
+[Prover] resumed surf_records=2 nblocks=29
