@@ -1,6 +1,5 @@
 use crate::errors::ResultBoxedError;
 use crate::utils::format::*;
-use core::arch::aarch64::*;
 use rand::rngs::StdRng;
 use rand_core::{RngCore, SeedableRng};
 use std::arch::asm;
@@ -382,46 +381,6 @@ impl Matrix {
     }
 
     // Alternative
-    pub fn mult_transpose_asm(a: &Matrix, b: &Matrix) -> Matrix {
-        if a.cols != b.rows {
-            panic!("Matrix sizes do not match");
-        }
-
-        let m = a.rows;
-        let n = b.cols;
-        let p = a.cols;
-        let t = b.transpose();
-        let mut c = vec![0u32; m * n];
-
-        // Parallelize the outer loops with scoped threads
-        c.par_chunks_mut(n).enumerate().for_each(|(i, c_row)| {
-            for j in 0..n {
-                let mut sum: u32 = 0;
-
-                // Use NEON intrinsics for the inner loop
-                unsafe {
-                    for k in (0..p).step_by(4) {
-                        // Load 4 elements from each matrix row/column into NEON registers
-                        let a_vec = vld1q_u32(a.elements.as_ptr().add(i * p + k));
-                        let b_vec = vld1q_u32(t.elements.as_ptr().add(j * p + k));
-
-                        // Multiply and accumulate
-                        let prod_vec = vmulq_u32(a_vec, b_vec);
-                        sum = vaddvq_u32(prod_vec).wrapping_add(sum); // Horizontally sum the vector and add to sum
-                    }
-
-                    // Handle remaining elements if p is not a multiple of 4
-                    for k in (p / 4 * 4)..p {
-                        sum = sum.wrapping_add(a.at(i, k).wrapping_mul(t.at(j, k)));
-                    }
-                }
-
-                c_row[j] = sum;
-            }
-        });
-
-        Matrix::with_vector(c, m, n)
-    }
     /**
      * Variant of the naive multiplication algorithm, which uses the transpose of `b`, resuting in better memory locality performance characteristics. Still O(n^3).
      * Panics if matrices `a` and `b` are of incompatbile dimensions.
@@ -430,20 +389,18 @@ impl Matrix {
         if a.cols != b.rows {
             panic!("Matrix sizes do not match");
         }
-
-        let m = a.rows;
-        let n = b.cols;
-        let p = a.cols;
+        let (m, n, p) = (a.rows, b.cols, a.cols);
         let t = b.transpose();
         let mut c = vec![0u32; m * n];
 
         c.par_chunks_mut(n).enumerate().for_each(|(i, c_row)| {
-            for j in 0..n {
-                let mut sum: u32 = 0;
-                for k in 0..p {
-                    sum = sum.wrapping_add(a.at(i, k).wrapping_mul(t.at(j, k)));
-                }
-                c_row[j] = sum;
+            let a_row = &a.elements[i * p..(i + 1) * p];
+            for (j, out) in c_row.iter_mut().enumerate() {
+                let t_row = &t.elements[j * p..(j + 1) * p];
+                *out = a_row
+                    .iter()
+                    .zip(t_row)
+                    .fold(0u32, |acc, (&x, &y)| acc.wrapping_add(x.wrapping_mul(y)));
             }
         });
 

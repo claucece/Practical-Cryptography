@@ -25,7 +25,7 @@ impl BaseParams {
 
         let A = Matrix::new_from_seed(public_seed, dim, m);
 
-        let H = Matrix::mult_transpose_asm(&A, &db);
+        let H = Matrix::mult_transpose(&A, &db);
 
         let trans_db = db.transpose();
 
@@ -87,7 +87,7 @@ impl ClientParams {
         let mut B: Matrix = Matrix::mult_transpose(&S, &A); // l x m
         B.add(&E); // l x m
 
-        let C = Matrix::mult_transpose_asm(&S, &H); // l x w
+        let C = Matrix::mult_transpose(&S, &H); // l x w
 
         Ok(Self {
             dim,
